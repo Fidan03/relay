@@ -52,6 +52,9 @@ audit-*.png
 # design-review tooling output
 .impeccable/
 
+# launch/social marketing assets — not part of the deployed app
+/social/
+
 content
 
 CLAUDE.md
