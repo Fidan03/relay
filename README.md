@@ -157,9 +157,11 @@ pattern) rather than editing `ui/*.tsx` directly, so `shadcn diff`/`add
 ## Deploying
 
 Works out of the box on [Vercel](https://vercel.com/new). After your first
-deploy, set the `NEXT_PUBLIC_SITE_URL` environment variable to your
-production URL and redeploy — it's what the Open Graph image uses to build an
-absolute URL, and without it, link previews will point at `localhost`.
+deploy, set the `SITE_URL` environment variable to your production URL and
+redeploy — it's what the Open Graph image uses to build an absolute URL, and
+without it, link previews will point at `localhost`. This is a server-only
+variable (no `NEXT_PUBLIC_` prefix needed — it's only read in `layout.tsx`'s
+metadata export, never in client-side code).
 
 ## License
 

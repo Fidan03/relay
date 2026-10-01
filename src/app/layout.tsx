@@ -23,8 +23,10 @@ const mono = JetBrains_Mono({
   variable: "--font-jetbrains",
 });
 
-// Set NEXT_PUBLIC_SITE_URL once deployed so absolute OG/Twitter image URLs resolve correctly.
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+// Set SITE_URL once deployed so absolute OG/Twitter image URLs resolve correctly.
+// Server-only: this is read in layout.tsx's metadata export (always server-side,
+// never shipped to the client bundle), so it doesn't need the NEXT_PUBLIC_ prefix.
+const siteUrl = process.env.SITE_URL ?? "http://localhost:3000";
 
 const title = "Relay — Background jobs that don't wake you up at 2 a.m.";
 const description =
